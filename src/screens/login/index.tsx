@@ -39,7 +39,7 @@ export function Login({ navigation }: LoginTypes){
             <View style={styles.formRow}>
                 <MaterialIcons name="email" style={styles.icon} />
                 <TextInput
-                placeholderTextColor={colors.branco}
+                placeholderTextColor={colors.principal}
                 style={styles.input}
                 placeholder="Email"
                 keyboardType="email-address"
@@ -50,7 +50,7 @@ export function Login({ navigation }: LoginTypes){
             <View style={styles.formRow}>
                 <Entypo name="key" style={styles.icon}/>
                 <TextInput
-                placeholderTextColor={colors.branco}
+                placeholderTextColor={colors.principal}
                 style={styles.input}
                 placeholder="Senha"
                 secureTextEntry={true}

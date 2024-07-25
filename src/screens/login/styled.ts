@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         borderWidth: 0.7,
-        borderColor: colors.preto,
+        borderColor: colors.principal,
         borderRadius: 5
     },
     icon: {

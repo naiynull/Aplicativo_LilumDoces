@@ -4,7 +4,7 @@ import { styles } from "./styled"
 import { MenuTabTypes } from "../../navigations/MenuBottomtab.navigation";
 
 export function Home({ navigation }: MenuTabTypes) {
-    const Fundo = require('../../assets/fundo.png')
+    const Fundo = require('../../asset/fundo.png')
    
     return (
         <ImageBackground source={Fundo} style={styleContainer.container}>

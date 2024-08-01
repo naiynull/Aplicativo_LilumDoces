@@ -1,5 +1,5 @@
 import { DrawerNavigationProp, createDrawerNavigator } from '@react-navigation/drawer';
-import { MenuTabs } from './MenuBottomTab.navigation';
+import { MenuTabs } from './MenuBottomtab.navigation';
 import { colors } from '../styles/colors'
 import { Ionicons } from '@expo/vector-icons';
 

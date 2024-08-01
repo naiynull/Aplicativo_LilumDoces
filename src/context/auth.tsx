@@ -1,5 +1,6 @@
 import { IAuthenticated, IUser } from "../services/data/User";
-import React, { createContext, useState, useCallback, ReactNode, useEffect, Dispatch, SetStateAction } from "react";
+import * as React from 'react';
+import { createContext, useState, useCallback, ReactNode, useEffect, Dispatch, SetStateAction } from "react";
 import { api } from '../services/api'
 import { apiUser } from "../services/data";
 import { isAfter, parseISO } from 'date-fns'

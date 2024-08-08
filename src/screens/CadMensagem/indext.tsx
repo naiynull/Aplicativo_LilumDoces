@@ -12,7 +12,7 @@ import { styles } from "./styled";
 
 
 export function CadMensagem({ navigation }: MessageTypes) {
-    const slide = require('../../asset/image 2.png')
+    const slide = require('../../asset/img 3.png')
     const [data, setData] = useState<IMessage>();
     const { setLoading } = useAuth();
     function handleChange(item: IMessage) {
@@ -43,7 +43,7 @@ export function CadMensagem({ navigation }: MessageTypes) {
                 <Text style={styles.title}>Cadastrar Mensagem</Text>
                 <View style={styles.formRow}>
                     <TextInput
-                        placeholderTextColor={colors.principal}
+                        placeholderTextColor={colors.preto}
                         style={styles.input}
                         placeholder="título"
                         onChangeText={(i) => handleChange({ title: i })}
@@ -51,7 +51,7 @@ export function CadMensagem({ navigation }: MessageTypes) {
                 </View>
                 <View style={styles.formRow}>
                     <TextInput
-                        placeholderTextColor={colors.principal}
+                        placeholderTextColor={colors.preto}
                         style={styles.input}
                         placeholder="mensagem"
                         multiline={true}

@@ -11,7 +11,7 @@ import { colors } from "../../styles/colors";
 import { AntDesign } from "@expo/vector-icons";
 
 export function Mensagem({ navigation }: MessageTypes) {
-    const slide = require('../../asset/image 2.png')
+    const slide = require('../../asset/img 4.png')
     const [message, setMessage] = useState<IResponseMessage[]>([])
     const { setLoading } = useAuth()
     useEffect(() => {
@@ -50,7 +50,7 @@ export function Mensagem({ navigation }: MessageTypes) {
             </View>
             <TouchableOpacity style={styles.botao}
                 onPress={() => navigation.navigate("CadMessage")}>
-                <AntDesign name="pluscircle" size={48} color={colors.preto} />
+                <AntDesign name="pluscircle" size={48} color={colors.branco} />
             </TouchableOpacity>
         </ImageBackground>
     )

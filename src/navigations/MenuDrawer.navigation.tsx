@@ -15,12 +15,12 @@ export function DrawerNavigation() {
     const Drawer = createDrawerNavigator<MenuDrawerParam>();
     return (
         <Drawer.Navigator screenOptions={{
-            headerStyle: { backgroundColor: 'rgb(143, 135, 131)'},
-            headerTintColor: colors.branco,
+            headerStyle: { backgroundColor: 'rgba(241, 228, 212, 1) '},
+            headerTintColor: colors.principal,
             drawerStyle: {
-                backgroundColor: 'rgba(143, 135, 131, 0.5)',
+                backgroundColor: 'rgba(100, 9, 6, 0.6)',
             },
-            drawerActiveTintColor: colors.preto,
+            drawerActiveTintColor: colors.branco,
             drawerInactiveTintColor: colors.preto
         }}>
             <Drawer.Screen name='Tab' component={MenuTabs}
@@ -28,7 +28,7 @@ export function DrawerNavigation() {
                     drawerLabel: 'Pagina Inicial',
                     headerTitle: '',
                     drawerIcon: () => (
-                        <Ionicons name="person" size={24} color={colors.preto} />
+                        <Ionicons name="person" size={24} color={colors.branco} />
                     ),
                 }}
             />

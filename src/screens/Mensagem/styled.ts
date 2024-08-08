@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         justifyContent: "center",
     },
     item: {
-        backgroundColor: colors.principal,
+        backgroundColor: 'rgba(100, 9, 6, 0.6)',
         width: 370,
         marginTop: 20,
         borderRadius: 10,

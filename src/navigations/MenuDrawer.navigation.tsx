@@ -2,9 +2,11 @@ import { DrawerNavigationProp, createDrawerNavigator } from '@react-navigation/d
 import { MenuTabs } from './MenuBottomtab.navigation';
 import { colors } from '../styles/colors'
 import { Ionicons } from '@expo/vector-icons';
+import { useAuth } from "../hook/auth";
 
 type MenuDrawerParam = {
     Tab: undefined
+    oi: undefined
 }
 type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Tab">
 export type DrawerTypes = {
@@ -13,6 +15,7 @@ export type DrawerTypes = {
 
 export function DrawerNavigation() {
     const Drawer = createDrawerNavigator<MenuDrawerParam>();
+    const { user, signOut } = useAuth()
     return (
         <Drawer.Navigator screenOptions={{
             headerStyle: { backgroundColor: 'rgba(241, 228, 212, 1) '},
@@ -23,6 +26,7 @@ export function DrawerNavigation() {
             drawerActiveTintColor: colors.branco,
             drawerInactiveTintColor: colors.preto
         }}>
+
             <Drawer.Screen name='Tab' component={MenuTabs}
                 options={{
                     drawerLabel: 'Pagina Inicial',
@@ -31,7 +35,20 @@ export function DrawerNavigation() {
                         <Ionicons name="person" size={24} color={colors.branco} />
                     ),
                 }}
+                
             />
+              <Drawer.Screen name='oi' component={MenuTabs}
+                options={{
+                    drawerLabel: 'Pagina Inicial',
+                    headerTitle: '',
+                    drawerIcon: () => (
+                        <Ionicons name="person" size={24} color={colors.branco} />
+                    ),
+                    
+                }}
+                
+            />
+            
         </Drawer.Navigator>
     )
 }

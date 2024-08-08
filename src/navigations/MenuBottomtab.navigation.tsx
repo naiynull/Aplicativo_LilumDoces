@@ -1,14 +1,14 @@
 import { createBottomTabNavigator, BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { Home, Informacoes} from '../screens';
 import { Entypo, Feather } from '@expo/vector-icons';
-import { FontAwesome5, FontAwesome, AntDesign } from '@expo/vector-icons';
+import { FontAwesome5, SimpleLineIcons, AntDesign } from '@expo/vector-icons';
 import { colors } from "../styles/colors"
 import { MessageNavigation } from './menssage.navigaton'
 
 
 type MenuTabParam = {
     Home: undefined
-    Informações: undefined
+    Cardápio: undefined
     Mensagem: undefined
 
 }
@@ -34,10 +34,10 @@ export function MenuTabs() {
                     )
                 }}
             />
-            <Tab.Screen name="Informações" component={Informacoes}
+            <Tab.Screen name="Cardápio" component={Informacoes}
                 options={{
                     tabBarIcon: () => (
-                        <AntDesign name="heart" size={24} color="black" />
+                        <SimpleLineIcons name="book-open" size={24} color="black" />
                     )
                     
                 }}

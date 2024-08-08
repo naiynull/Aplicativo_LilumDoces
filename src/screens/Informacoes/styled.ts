@@ -1,8 +1,6 @@
 import { StyleSheet } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
 export const styles = StyleSheet.create({
-
     scrollContainer: {
         flexGrow: 1,
         padding: 20,
@@ -17,21 +15,23 @@ export const styles = StyleSheet.create({
     },
     subtitle: {
         fontSize: 18,
-        color: '#aaa',
+        color: '#5F0C10',
     },
     text: {
         fontSize: 16,
         color: '#ccc',
         marginBottom: 20,
+        
     },
     row: {
         flexDirection: 'row',
         flexWrap: 'wrap',
+        justifyContent: 'space-between', // Distribui as colunas uniformemente
         marginBottom: 20,
     },
     column: {
-        flex: 1,
-        margin: 5,
+        width: '48%', // Ajusta a largura das colunas para duas por linha
+        marginBottom: 20,
     },
     image: {
         width: '100%',
@@ -44,9 +44,8 @@ export const styles = StyleSheet.create({
         marginBottom: 5,
     },
     paragraph: {
-        fontSize: 14,
-        color: '#ddd',
+        fontSize: 15,
+        color: '#778899',
+        
     },
 });
-
-

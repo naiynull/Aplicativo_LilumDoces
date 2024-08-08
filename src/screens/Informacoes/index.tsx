@@ -1,7 +1,7 @@
 import React from 'react';
-import { ImageBackground, Text, View, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { ImageBackground, Text, View, Image, StyleSheet, ScrollView } from 'react-native';
 import { styleContainer } from "../../styles/globalstyle";
-import { styles } from "./styled"; // Se você estiver usando estilos adicionais
+import { styles } from "./styled"; // Certifique-se de que este caminho está correto
 import { MenuTabTypes } from "../../navigations/MenuBottomtab.navigation";
 
 export function Informacoes({ navigation }: MenuTabTypes) {
@@ -11,53 +11,49 @@ export function Informacoes({ navigation }: MenuTabTypes) {
         <ImageBackground source={Fundo} style={styleContainer.container}>
             <ScrollView contentContainerStyle={styles.scrollContainer}>
                 <View style={styles.section}>
-                    <Text style={styles.title}>The Legend of Zelda a Link to the Past</Text>
-                    <Text style={styles.subtitle}>Nintendo</Text>
+                    <Text style={styles.title}>Delícias em Cada Mordida: Nossa Coleção de Doces</Text>
+                    <Text style={styles.subtitle}>Sabor Inigualável</Text>
                     <Text style={styles.text}>Super Nintendo</Text>
 
                     <View style={styles.row}>
                         <View style={styles.column}>
-                            <Image source={require('../../asset/img 3.png')} style={styles.image} />
-                            <Text style={styles.header}>Criação</Text>
+                            <Image source={require('../../asset/copoF.jpg')} style={styles.image} />
+                            <Text style={styles.header}>cookie</Text>
                             <Text style={styles.paragraph}>
-                                The Legend of Zelda: A Link to the Past é o terceiro jogo da série The Legend of Zelda, e foi lançado em 1991 no Japão e em 1992 na América do Norte e Europa.
+                           Sabor irresistível! Nosso cookie é crocante por fora, macio por dentro e recheado com chocolate. 
                             </Text>
                         </View>
                         <View style={styles.column}>
-                            <Image source={require('../../asset/img 3.png')} style={styles.image} />
-                            <Text style={styles.header}>História</Text>
+                            <Image source={require('../../asset/bg.jpg')} style={styles.image} />
+                            <Text style={styles.header}>Brigadeiro</Text>
                             <Text style={styles.paragraph}>
-                                A trama de A Link to the Past concentra-se no herói Link em uma jornada para salvar a terra de Hyrule, impedir a volta de Ganon e libertar as sete donzelas descendentes dos antigos sábios.
+                           Brigadeiro cremoso e irresistível! Perfeito para adoçar seu dia com um toque de chocolate e alegria. 
+                            </Text>
+                        </View>
+                
+
+                    <View style={styles.column}>
+                            <Image source={require('../../asset/gl.jpeg')} style={styles.image} />
+                            <Text style={styles.header}>Brownie</Text>
+                            <Text style={styles.paragraph}>
+                            Brownie irresistível! Uma explosão de chocolate a cada mordida, com um toque suave e decadente. Perfeito para adoçar seu dia!
                             </Text>
                         </View>
                         <View style={styles.column}>
-                            <Image source={require('../../asset/img 3.png')} style={styles.image} />
-                            <Text style={styles.header}>Jogabilidade</Text>
+                            <Image source={require('../../asset/ck.jpeg')} style={styles.image} />
+                            <Text style={styles.header}>cupcake</Text>
                             <Text style={styles.paragraph}>
-                                Link é capaz de realizar diversas ações, como pular de penhascos para nadar, empurrar e levantar objetos, e usar uma variedade de ferramentas, armas, armaduras e escudos.
-                            </Text>
-                        </View>
-                        <View style={styles.column}>
-                            <Image source={require('../../asset/img 3.png')} style={styles.image} />
-                            <Text style={styles.header}>Curiosidade</Text>
-                            <Text style={styles.paragraph}>
-                                Em A Link to the Past, ocorre uma das primeiras demonstrações via videogame de que maltratar animais não é legal. Se Link insistir em agredir os Cuccos (aquelas galinhas simpáticas), aparecerá um bando feroz delas do céu, capaz de nocauteá-lo se não cair fora rapidinho.
+                            Cupcake fofinho e delicioso, coberto com um glacê irresistível! Cada mordida é uma explosão de sabor e doçura. Ideal para qualquer momento especial!
                             </Text>
                         </View>
                     </View>
-                    <Image source={require('../../asset/img 3.png')} style={styles.image} />
-                    <Text style={styles.header}>ctrl de aventuras</Text>
-                    <Text style={styles.paragraph}>
-                        Numa noite escura e de tempestade, o jovem Link embarca numa aventura inesquecível, tanto para ele como para ti! A Princess Zelda foi capturada e um mago maléfico tenta libertar Ganon, o rei das trevas. Apenas Link tem a coragem para salvar Hyrule!
-                    </Text>
+
+                    
                 </View>
 
-                {/* Repeat for other games as needed */}
+                {/* Repita para outros jogos conforme necessário */}
 
             </ScrollView>
         </ImageBackground>
     );
 }
-
-
-   

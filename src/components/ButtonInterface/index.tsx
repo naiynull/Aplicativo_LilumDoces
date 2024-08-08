@@ -1,5 +1,6 @@
-import { TouchableOpacity, TouchableOpacityProps, Text } from "react-native";
+import { Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
 import { styles } from "./styles"
+import React from "react";
 
 export interface IBInterface extends TouchableOpacityProps {
     onPressI: () => void

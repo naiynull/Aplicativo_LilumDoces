@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     itemText: {
         fontSize: 20,
         padding: 10,
-        fontFamily: 'Asap_400Regular',
+      
     },
     botao: {
         position: "absolute",

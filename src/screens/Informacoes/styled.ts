@@ -32,6 +32,8 @@ export const styles = StyleSheet.create({
     column: {
         width: '48%', // Ajusta a largura das colunas para duas por linha
         marginBottom: 20,
+        backgroundColor:'rgba(232, 216, 197, 1)',
+        borderRadius: 5,
     },
     image: {
         width: '100%',
@@ -48,4 +50,6 @@ export const styles = StyleSheet.create({
         color: '#778899',
         
     },
+
+ 
 });

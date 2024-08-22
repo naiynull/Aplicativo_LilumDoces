@@ -1,15 +1,17 @@
 import { createBottomTabNavigator, BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { Home, Informacoes} from '../screens';
 import { Entypo, Feather } from '@expo/vector-icons';
-import { FontAwesome5, SimpleLineIcons, AntDesign } from '@expo/vector-icons';
+import { FontAwesome5, SimpleLineIcons, AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 import { colors } from "../styles/colors"
 import { MessageNavigation } from './menssage.navigaton'
+import { Camera } from '../screens/Camera';
 
 
 type MenuTabParam = {
     Home: undefined
     Cardápio: undefined
     Mensagem: undefined
+    Camera: undefined
 
 }
 type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Home">
@@ -50,7 +52,16 @@ export function MenuTabs() {
                     ),
                 }}
             />
+               <Tab.Screen name="Camera" component={Camera}
+                options={{
+                    tabBarIcon: () => (
+                        <MaterialCommunityIcons name="camera-wireless-outline" size={24} color="black" />
+                    ),
+                }}
+            />
         </Tab.Navigator>
+       
+    
     )
 
 }

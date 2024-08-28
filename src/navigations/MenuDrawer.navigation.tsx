@@ -6,7 +6,7 @@ import { useAuth } from "../hook/auth";
 
 type MenuDrawerParam = {
     Tab: undefined
-    oi: undefined
+ 
 }
 type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Tab">
 export type DrawerTypes = {
@@ -34,17 +34,6 @@ export function DrawerNavigation() {
                     drawerIcon: () => (
                         <Ionicons name="person" size={24} color={colors.branco} />
                     ),
-                }}
-                
-            />
-              <Drawer.Screen name='oi' component={MenuTabs}
-                options={{
-                    drawerLabel: 'Pagina Inicial',
-                    headerTitle: '',
-                    drawerIcon: () => (
-                        <Ionicons name="person" size={24} color={colors.branco} />
-                    ),
-                    
                 }}
                 
             />

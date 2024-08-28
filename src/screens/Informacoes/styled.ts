@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     },
     section: {
         marginBottom: 20,
+        
     },
     title: {
         fontSize: 24,
@@ -33,21 +34,28 @@ export const styles = StyleSheet.create({
         width: '48%', // Ajusta a largura das colunas para duas por linha
         marginBottom: 20,
         backgroundColor:'rgba(232, 216, 197, 1)',
-        borderRadius: 5,
+        borderRadius: 10,
+      
+        
     },
     image: {
-        width: '100%',
-        height: 200,
+        width: '90%',
+        height: 150,
         marginBottom: 10,
+        alignSelf:'center',
+        marginTop: 12,
     },
     header: {
         fontSize: 18,
         color: '#fff',
         marginBottom: 5,
+        marginLeft:15,
     },
     paragraph: {
         fontSize: 15,
         color: '#778899',
+        marginLeft:12,
+       
         
     },
 

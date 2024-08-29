@@ -4,6 +4,7 @@ import { Entypo, Feather } from '@expo/vector-icons';
 import { FontAwesome5, SimpleLineIcons, AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 import { colors } from "../styles/colors"
 import { MessageNavigation } from './menssage.navigaton'
+import{InformacaoNavigation} from './informacoes.navigation'
 import { Camera } from '../screens/Camera';
 
 
@@ -36,7 +37,7 @@ export function MenuTabs() {
                     )
                 }}
             />
-            <Tab.Screen name="Cardápio" component={Informacoes}
+            <Tab.Screen name="Cardápio" component={InformacaoNavigation}
                 options={{
                     tabBarIcon: () => (
                         <SimpleLineIcons name="book-open" size={24} color="black" />

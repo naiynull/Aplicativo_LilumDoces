@@ -1,10 +1,10 @@
 import React from 'react';
-import { ImageBackground, Text, View, Image, StyleSheet, ScrollView } from 'react-native';
+import { ImageBackground, Text, View, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { styleContainer } from "../../styles/globalstyle";
 import { styles } from "./styled"; // Certifique-se de que este caminho está correto
-import { MenuTabTypes } from "../../navigations/MenuBottomtab.navigation";
+import { InformacoesTypes } from "../../navigations/informacoes.navigation";
 
-export function Informacoes({ navigation }: MenuTabTypes) {
+export function Informacoes({ navigation }: InformacoesTypes) {
     const Fundo = require('../../asset/img 4.png');
     
     return (
@@ -17,19 +17,20 @@ export function Informacoes({ navigation }: MenuTabTypes) {
                     <Text style={styles.text}>Super Docinhos</Text>
                 
                     <View style={styles.row}>
-                        <View style={styles.column}>
+                        <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("Cookie")}>
                             <Image source={require('../../asset/copoF.jpg')} style={styles.image} />
                             <Text style={styles.header}>cookie</Text>
                             <Text style={styles.paragraph}>
-                           Sabor irresistível! Nosso cookie é crocante por fora, macio por dentro e recheado com chocolate. 
+                            Crocância de muito amor! 
                             </Text>
-                        </View>
+                        </TouchableOpacity>
                         <View style={styles.column}>
                             <Image source={require('../../asset/bg.jpg')} style={styles.image} />
                             <Text style={styles.header}>Brigadeiro</Text>
                             <Text style={styles.paragraph}>
-                           Brigadeiro cremoso e irresistível! Perfeito para adoçar seu dia com um toque de chocolate e alegria. 
+                           Brigadeiro cremoso e irresistível!
                             </Text>
+                        </View>
                         </View>
                 
                         <View style={styles.row}>
@@ -37,14 +38,15 @@ export function Informacoes({ navigation }: MenuTabTypes) {
                             <Image source={require('../../asset/gl.jpeg')} style={styles.image} />
                             <Text style={styles.header}>Brownie</Text>
                             <Text style={styles.paragraph}>
-                            Brownie irresistível! Uma explosão de chocolate a cada mordida, com um toque suave e decadente. Perfeito para adoçar seu dia!
+                            Brownie irresistível!
                             </Text>
+                            <Text></Text>
                         </View>
                         <View style={styles.column}>
                             <Image source={require('../../asset/ck.jpeg')} style={styles.image} />
                             <Text style={styles.header}>cupcake</Text>
                             <Text style={styles.paragraph}>
-                            Cupcake fofinho e delicioso, coberto com um glacê irresistível! Cada mordida é uma explosão de sabor e doçura. Ideal para qualquer momento especial!
+                            Cupcake fofinho e delicioso!
                             </Text>
                         </View>
                     </View>
@@ -53,16 +55,16 @@ export function Informacoes({ navigation }: MenuTabTypes) {
                     <View style={styles.row}>
                     <View style={styles.column}>
                             <Image source={require('../../asset/donuts.jpg')} style={styles.image} />
-                            <Text style={styles.header}>Brownie</Text>
+                            <Text style={styles.header}>Donuts</Text>
                             <Text style={styles.paragraph}>
-                            Brownie irresistível! Uma explosão de chocolate a cada mordida, com um toque suave e decadente. Perfeito para adoçar seu dia!
+                            Brownie irresistível!
                             </Text>
                         </View>
                         <View style={styles.column}>
                             <Image source={require('../../asset/Cone.jpg')} style={styles.image} />
-                            <Text style={styles.header}>cupcake</Text>
+                            <Text style={styles.header}>Cone Recheado</Text>
                             <Text style={styles.paragraph}>
-                            Cupcake fofinho e delicioso, coberto com um glacê irresistível! Cada mordida é uma explosão de sabor e doçura. Ideal para qualquer momento especial!
+                            Cupcake fofinho e delicioso
                             </Text>
                         </View>
                         </View>
@@ -72,19 +74,19 @@ export function Informacoes({ navigation }: MenuTabTypes) {
                             <Image source={require('../../asset/gl.jpeg')} style={styles.image} />
                             <Text style={styles.header}>Brownie</Text>
                             <Text style={styles.paragraph}>
-                            Brownie irresistível! Uma explosão de chocolate a cada mordida, com um toque suave e decadente. Perfeito para adoçar seu dia!
+                            Brownie irresistível! 
                             </Text>
                         </View>
                         <View style={styles.column}>
                             <Image source={require('../../asset/ck.jpeg')} style={styles.image} />
                             <Text style={styles.header}>cupcake</Text>
                             <Text style={styles.paragraph}>
-                            Cupcake fofinho e delicioso, coberto com um glacê irresistível! Cada mordida é uma explosão de sabor e doçura. Ideal para qualquer momento especial!
+                            Cupcake fofinho e delicioso
                             </Text>
                         </View>
                         </View>
 
-                    </View>
+                
     
 
                 {/* Repita para outros jogos conforme necessário */}

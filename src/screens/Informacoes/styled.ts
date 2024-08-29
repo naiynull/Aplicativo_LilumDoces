@@ -52,7 +52,7 @@ export const styles = StyleSheet.create({
         marginLeft:15,
     },
     paragraph: {
-        fontSize: 15,
+        fontSize: 13,
         color: '#778899',
         marginLeft:12,
        

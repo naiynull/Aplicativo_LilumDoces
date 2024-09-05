@@ -1,9 +1,16 @@
 import { StackNavigationProp, createStackNavigator } from "@react-navigation/stack"
-import { Informacoes, Cookie } from '../screens'
+import { Informacoes, Cookie,Biscoito,Brigadeiro,Brownie,ConeRecheado,Cupcake,Donuts } from '../screens'
 
 type InformacoesStackParamList = {
     Informacoes: undefined
     Cookie: undefined
+    Brigadeiro:undefined
+    Brownie:undefined
+    Biscoito:undefined
+    ConeRecheado:undefined
+    Cupcake:undefined
+    Donuts:undefined
+
 }
 type InformacaoScreenNavigationProp = StackNavigationProp<InformacoesStackParamList, 'Informacoes'>
 export type InformacoesTypes = {
@@ -15,6 +22,12 @@ export function InformacaoNavigation() {
         <Stack.Navigator screenOptions={{ headerShown: false}}>
             <Stack.Screen name='Informacoes' component={Informacoes} />
             <Stack.Screen name='Cookie' component={Cookie} />
+            <Stack.Screen name='Brigadeiro' component={Brigadeiro} />
+            <Stack.Screen name='Brownie' component={Brownie} />
+            <Stack.Screen name='Biscoito' component={Biscoito} />
+            <Stack.Screen name='ConeRecheado' component={ConeRecheado} />
+            <Stack.Screen name='Cupcake' component={Cupcake} />
+            <Stack.Screen name='Donuts' component={Donuts} />
         </Stack.Navigator>
     )
 }

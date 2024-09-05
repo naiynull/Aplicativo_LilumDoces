@@ -5,7 +5,7 @@ import { MenuTabTypes } from "../../../navigations/MenuBottomtab.navigation";
 import { useAuth } from "../../../hook/auth";
 import { ComponentButtonInterface } from "../../../components"
 
-export function Cookie({ navigation }: MenuTabTypes) {
+export function ConeReachado({ navigation }: MenuTabTypes) {
     const Fundo = require('../../../asset/fundo2.png')
     const { user, signOut } = useAuth()
     return (

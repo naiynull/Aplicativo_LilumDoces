@@ -24,59 +24,60 @@ export function Informacoes({ navigation }: InformacoesTypes) {
                             Crocância de muito amor! 
                             </Text>
                         </TouchableOpacity>
-                        <View style={styles.column}>
+
+                         <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("Brigadeiro")}>
                             <Image source={require('../../asset/bg.jpg')} style={styles.image} />
                             <Text style={styles.header}>Brigadeiro</Text>
                             <Text style={styles.paragraph}>
                            Brigadeiro cremoso e irresistível!
                             </Text>
-                        </View>
+                        </TouchableOpacity>
                         </View>
                 
                         <View style={styles.row}>
-                    <View style={styles.column}>
+                        <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("Brownie")}>
                             <Image source={require('../../asset/gl.jpeg')} style={styles.image} />
                             <Text style={styles.header}>Brownie</Text>
                             <Text style={styles.paragraph}>
                             Brownie irresistível!
                             </Text>
                             <Text></Text>
-                        </View>
-                        <View style={styles.column}>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("Cupcake")}>
                             <Image source={require('../../asset/ck.jpeg')} style={styles.image} />
-                            <Text style={styles.header}>cupcake</Text>
+                            <Text style={styles.header}>Cupcake</Text>
                             <Text style={styles.paragraph}>
                             Cupcake fofinho e delicioso!
                             </Text>
-                        </View>
+                        </TouchableOpacity>
                     </View>
                     </View>
 
                     <View style={styles.row}>
-                    <View style={styles.column}>
+                    <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("Donuts")}>
                             <Image source={require('../../asset/donuts.jpg')} style={styles.image} />
                             <Text style={styles.header}>Donuts</Text>
                             <Text style={styles.paragraph}>
                             Brownie irresistível!
                             </Text>
-                        </View>
-                        <View style={styles.column}>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("ConeRecheado")}>
                             <Image source={require('../../asset/Cone.jpg')} style={styles.image} />
                             <Text style={styles.header}>Cone Recheado</Text>
                             <Text style={styles.paragraph}>
                             Cupcake fofinho e delicioso
                             </Text>
-                        </View>
+                        </TouchableOpacity>
                         </View>
 
                         <View style={styles.row}>
-                        <View style={styles.column}>
-                            <Image source={require('../../asset/gl.jpeg')} style={styles.image} />
-                            <Text style={styles.header}>Brownie</Text>
+                        <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("Biscoito")}>
+                            <Image source={require('../../asset/capu.jpeg')} style={styles.image} />
+                            <Text style={styles.header}>Biscoito</Text>
                             <Text style={styles.paragraph}>
                             Brownie irresistível! 
                             </Text>
-                        </View>
+                        </TouchableOpacity>
                         <View style={styles.column}>
                             <Image source={require('../../asset/ck.jpeg')} style={styles.image} />
                             <Text style={styles.header}>cupcake</Text>

@@ -1,97 +1,75 @@
 import React from 'react';
-import { ImageBackground, Text, View, Image, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import { styleContainer } from "../../styles/globalstyle";
-import { styles } from "./styled"; // Certifique-se de que este caminho está correto
+import { ImageBackground, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { InformacoesTypes } from "../../navigations/informacoes.navigation";
+import {styles} from './styled'; // Certifique-se de que o caminho esteja correto
 
 export function Informacoes({ navigation }: InformacoesTypes) {
     const Fundo = require('../../asset/img 4.png');
     
     return (
-        <ImageBackground source={Fundo} style={styleContainer.container}>
+        <ImageBackground source={Fundo} style={styles.container}>
             <ScrollView contentContainerStyle={styles.scrollContainer}>
-    
                 <View style={styles.section}>
-                    <Text style={styles.title}>Delícias em Cada Mordida: Nossa Coleção de Doces</Text>
-                    <Text style={styles.subtitle}>Sabor Inigualável</Text>
-                    <Text style={styles.text}>Super Docinhos</Text>
+                    <Text style={styles.title}>Nossos Doces Irresistíveis</Text>
+                    <Text style={styles.subtitle}>Uma Experiência Doce</Text>
+                    <Text style={styles.description}>Descubra nossa seleção especial de doces feitos com carinho e qualidade.</Text>
                 
                     <View style={styles.row}>
-                        <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("Cookie")}>
+                        <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("Cookie")}>
                             <Image source={require('../../asset/copoF.jpg')} style={styles.image} />
-                            <Text style={styles.header}>cookie</Text>
-                            <Text style={styles.paragraph}>
-                            Crocância de muito amor! 
-                            </Text>
+                            <Text style={styles.itemTitle}>Cookies</Text>
+                            
                         </TouchableOpacity>
 
-                         <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("Brigadeiro")}>
+                        <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("Brigadeiro")}>
                             <Image source={require('../../asset/bg.jpg')} style={styles.image} />
-                            <Text style={styles.header}>Brigadeiro</Text>
-                            <Text style={styles.paragraph}>
-                           Brigadeiro cremoso e irresistível!
-                            </Text>
-                        </TouchableOpacity>
-                        </View>
-                
-                        <View style={styles.row}>
-                        <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("Brownie")}>
-                            <Image source={require('../../asset/gl.jpeg')} style={styles.image} />
-                            <Text style={styles.header}>Brownie</Text>
-                            <Text style={styles.paragraph}>
-                            Brownie irresistível!
-                            </Text>
-                            <Text></Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("Cupcake")}>
-                            <Image source={require('../../asset/ck.jpeg')} style={styles.image} />
-                            <Text style={styles.header}>Cupcake</Text>
-                            <Text style={styles.paragraph}>
-                            Cupcake fofinho e delicioso!
-                            </Text>
+                            <Text style={styles.itemTitle}>Brigadeiro</Text>
+                           
                         </TouchableOpacity>
                     </View>
+                
+                    <View style={styles.row}>
+                        <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("Brownie")}>
+                            <Image source={require('../../asset/gl.jpeg')} style={styles.image} />
+                            <Text style={styles.itemTitle}>Brownie</Text>
+                           
+                        </TouchableOpacity>
+                        
+                        <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("Cupcake")}>
+                            <Image source={require('../../asset/ck.jpeg')} style={styles.image} />
+                            <Text style={styles.itemTitle}>Cupcake</Text>
+                           
+                        </TouchableOpacity>
                     </View>
 
                     <View style={styles.row}>
-                    <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("Donuts")}>
+                        <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("Donuts")}>
                             <Image source={require('../../asset/donuts.jpg')} style={styles.image} />
-                            <Text style={styles.header}>Donuts</Text>
-                            <Text style={styles.paragraph}>
-                            Brownie irresistível!
-                            </Text>
+                            <Text style={styles.itemTitle}>Donuts</Text>
+                          
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("ConeRecheado")}>
+                        
+                        <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("ConeRecheado")}>
                             <Image source={require('../../asset/Cone.jpg')} style={styles.image} />
-                            <Text style={styles.header}>Cone Recheado</Text>
-                            <Text style={styles.paragraph}>
-                            Cupcake fofinho e delicioso
-                            </Text>
+                            <Text style={styles.itemTitle}>Cone Recheado</Text>
+                           
                         </TouchableOpacity>
-                        </View>
+                    </View>
 
-                        <View style={styles.row}>
-                        <TouchableOpacity style={styles.column} onPress={()=> navigation.navigate("Biscoito")}>
+                    <View style={styles.row}>
+                        <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("Biscoito")}>
                             <Image source={require('../../asset/capu.jpeg')} style={styles.image} />
-                            <Text style={styles.header}>Biscoito</Text>
-                            <Text style={styles.paragraph}>
-                            Brownie irresistível! 
-                            </Text>
+                            <Text style={styles.itemTitle}>Biscoito</Text>
+                            
                         </TouchableOpacity>
-                        <View style={styles.column}>
+                        
+                        <View style={styles.item}>
                             <Image source={require('../../asset/ck.jpeg')} style={styles.image} />
-                            <Text style={styles.header}>cupcake</Text>
-                            <Text style={styles.paragraph}>
-                            Cupcake fofinho e delicioso
-                            </Text>
+                            <Text style={styles.itemTitle}>Cupcake</Text>
+                            
                         </View>
-                        </View>
-
-                
-    
-
-                {/* Repita para outros jogos conforme necessário */}
-
+                    </View>
+                </View>
             </ScrollView>
         </ImageBackground>
     );

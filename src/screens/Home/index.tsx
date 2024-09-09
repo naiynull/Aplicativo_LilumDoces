@@ -12,9 +12,7 @@ export function Home({ navigation }: MenuTabTypes) {
         <ImageBackground source={Fundo} style={styleContainer.container}>
             <View style={styleContainer.container}>
            
-            <ComponentButtonInterface title="Sair" type="primary"
-                onPressI={async () => await signOut()}
-            />
+            
             </View>
         </ImageBackground>
     )

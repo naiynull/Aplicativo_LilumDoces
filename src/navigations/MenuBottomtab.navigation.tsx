@@ -1,11 +1,12 @@
 import { createBottomTabNavigator, BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { Home, Informacoes} from '../screens';
+import { Home, Informacoes } from '../screens';
 import { Entypo, Feather } from '@expo/vector-icons';
-import { FontAwesome5, SimpleLineIcons, AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
+import { FontAwesome5, SimpleLineIcons, AntDesign, Ionicons } from '@expo/vector-icons';
 import { colors } from "../styles/colors"
 import { MessageNavigation } from './menssage.navigaton'
-import{InformacaoNavigation} from './informacoes.navigation'
+import { InformacaoNavigation } from './informacoes.navigation'
 import { Camera } from '../screens/Camera';
+import { Perfil } from '../screens';
 
 
 type MenuTabParam = {
@@ -13,6 +14,7 @@ type MenuTabParam = {
     Cardápio: undefined
     Mensagem: undefined
     Camera: undefined
+    Perfil: undefined
 
 }
 type MenuScreenNavigation = BottomTabNavigationProp<MenuTabParam, "Home">
@@ -23,13 +25,13 @@ export type MenuTabTypes = {
 export function MenuTabs() {
     const Tab = createBottomTabNavigator<MenuTabParam>();
     return (
-        <Tab.Navigator screenOptions={{ 
+        <Tab.Navigator screenOptions={{
             tabBarActiveBackgroundColor: 'rgba(232, 216, 197, 1)',
-                tabBarActiveTintColor: colors.principal,
-                headerShown: false,
-                tabBarInactiveBackgroundColor: 'rgba(232, 216, 197, 1)',
-                tabBarInactiveTintColor: colors.branco,
-            }}>
+            tabBarActiveTintColor: colors.principal,
+            headerShown: false,
+            tabBarInactiveBackgroundColor: 'rgba(232, 216, 197, 1)',
+            tabBarInactiveTintColor: colors.branco,
+        }}>
             <Tab.Screen name="Home" component={Home}
                 options={{
                     tabBarIcon: () => (
@@ -42,7 +44,7 @@ export function MenuTabs() {
                     tabBarIcon: () => (
                         <SimpleLineIcons name="book-open" size={24} color="black" />
                     )
-                    
+
                 }}
 
             />
@@ -53,16 +55,17 @@ export function MenuTabs() {
                     ),
                 }}
             />
-               <Tab.Screen name="Camera" component={Camera}
+            <Tab.Screen name="Perfil" component={Perfil}
                 options={{
                     tabBarIcon: () => (
-                        <MaterialCommunityIcons name="camera-wireless-outline" size={24} color="black" />
+                        <Ionicons name="person" size={24} color={colors.principal} />
                     ),
                 }}
             />
+
         </Tab.Navigator>
-       
-    
+
+
     )
 
 }

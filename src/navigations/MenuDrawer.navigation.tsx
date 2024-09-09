@@ -1,12 +1,17 @@
 import { DrawerNavigationProp, createDrawerNavigator } from '@react-navigation/drawer';
+import { MaterialCommunityIcons,FontAwesome } from '@expo/vector-icons';
 import { MenuTabs } from './MenuBottomtab.navigation';
 import { colors } from '../styles/colors'
 import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from "../hook/auth";
+import { Camera, QrCode, Imagens } from '../screens';
 
 type MenuDrawerParam = {
     Tab: undefined
- 
+    Camera: undefined
+    Qrcode: undefined
+    Imagens: undefined
+
 }
 type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Tab">
 export type DrawerTypes = {
@@ -18,7 +23,7 @@ export function DrawerNavigation() {
     const { user, signOut } = useAuth()
     return (
         <Drawer.Navigator screenOptions={{
-            headerStyle: { backgroundColor: 'rgba(241, 228, 212, 1) '},
+            headerStyle: { backgroundColor: 'rgba(241, 228, 212, 1) ' },
             headerTintColor: colors.principal,
             drawerStyle: {
                 backgroundColor: 'rgba(100, 9, 6, 0.6)',
@@ -35,9 +40,32 @@ export function DrawerNavigation() {
                         <Ionicons name="person" size={24} color={colors.branco} />
                     ),
                 }}
-                
+
             />
-            
+            <Drawer.Screen name='Camera' component={Camera}
+                options={{
+                    drawerLabel: 'Câmera',
+                    headerTitle: '',
+                    drawerIcon: () => (
+                        <MaterialCommunityIcons name="camera-wireless-outline" size={24} color="white" />
+                    ),
+                }}
+            />
+            <Drawer.Screen name='Imagens' component={Imagens}
+                options={{
+                    drawerIcon: () => (
+                        <FontAwesome name="picture-o" size={24} color={colors.branco} />
+                    ),
+                }}
+            />
+            <Drawer.Screen name='Qrcode' component={QrCode}
+                options={{
+                    drawerIcon: () => (
+                        <MaterialCommunityIcons name="qrcode-scan" sixe={24} color={colors.branco} />
+                    ),
+                }}
+            />
+
         </Drawer.Navigator>
     )
 }

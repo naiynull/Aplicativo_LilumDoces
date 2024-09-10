@@ -4,12 +4,17 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(255, 255, 255, 0.6)', // Semi-transparent background
+        borderRadius: 15,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
     },
     scrollViewContainer: {
         flexGrow: 1,
     },
-    cookieCard: {
+    itemCard: {
         backgroundColor: 'white',
         borderRadius: 10,
         elevation: 5,
@@ -21,28 +26,28 @@ export const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 4,
     },
-    cookieImage: {
+    itemImage: {
         width: 150,
         height: 150,
         borderRadius: 75,
         marginBottom: 10,
     },
-    cookieName: {
+    itemTitle: {
         fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 5,
     },
-    cookiePrice: {
+    itemCost: {
         fontSize: 16,
         color: 'green',
         marginBottom: 5,
     },
-    cookieSize: {
+    itemPortion: {
         fontSize: 14,
         color: 'gray',
         marginBottom: 10,
     },
-    cookieDescription: {
+    itemDetails: {
         fontSize: 14,
         color: 'black',
         textAlign: 'center',
@@ -59,5 +64,9 @@ export const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         textAlign: 'center',
+    },
+    backgroundImage: {
+        flex: 1,
+        justifyContent: 'center',
     },
 });

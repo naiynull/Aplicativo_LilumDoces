@@ -5,52 +5,56 @@ import { styles } from './styled';
 import { MenuTabTypes } from '../../../navigations/MenuBottomtab.navigation';
 import { useAuth } from '../../../hook/auth';
 
-// Defina a interface para o Cookie
-interface Cookie {
-    name: string;
-    price: string;
-    size: string;
-    description: string;
-    image: ImageSourcePropType; // Use 'ImageSourcePropType' para tipos de imagem
+// Defina a interface para o Item com um status adicional
+interface Item {
+    title: string;
+    cost: string;
+    portion: string;
+    details: string;
+    picture: ImageSourcePropType; // Use 'ImageSourcePropType' para tipos de imagem
+    inStock: boolean; // Adicione a propriedade 'inStock'
 }
 
-// Dados dos cookies com o tipo definido
-const cookies: Cookie[] = [
+// Dados dos itens com o status definido
+const items: Item[] = [
     {
-        name: 'Cookie de Chocolate',
-        price: 'R$ 3,00',
-        size: 'Médio',
-        description: 'Um clássico cookie de chocolate com pedaços de chocolate derretido.',
-        image: require('../../../asset/cookiedechocolate.jpg'),
+        title: 'Cookie de Chocolate',
+        cost: 'R$ 3,00',
+        portion: 'Médio',
+        details: 'Um clássico cookie de chocolate com pedaços de chocolate derretido.',
+        picture: require('../../../asset/cookiedechocolate.jpg'),
+        inStock: true,
     },
     {
-        name: 'Cookie paçoca',
-        price: 'R$ 3,00',
-        size: 'Médio',
-        description: 'Cookie de paçoca irresistível.',
-        image: require('../../../asset/cookiepacoca.jpg'),
+        title: 'Cookie paçoca',
+        cost: 'R$ 3,00',
+        portion: 'Médio',
+        details: 'Cookie de paçoca irresistível.',
+        picture: require('../../../asset/cookiepacoca.jpg'),
+        inStock: false,
     },
     {
-        name: 'Cookie sem glúten e lactose',
-        price: 'R$ 4,00',
-        size: 'Médio',
-        description: 'Cookie sem lactose e sem derivados de leite.',
-        image: require('../../../asset/cookiezerolactose.jpg'),
+        title: 'Cookie sem glúten e lactose',
+        cost: 'R$ 4,00',
+        portion: 'Médio',
+        details: 'Cookie sem lactose e sem derivados de leite.',
+        picture: require('../../../asset/cookiezerolactose.jpg'),
+        inStock: true,
     },
 ];
 
 export function Cookie({ navigation }: MenuTabTypes) {
-    const Fundo = require('../../../asset/fundo2.png');
+    const backgroundImage = require('../../../asset/fundo2.png');
     const { user, signOut } = useAuth();
 
     // Função para gerar a mensagem
-    const generateMessage = (cookie: Cookie) => {
-        return `Olá! Gostaria de comprar o ${cookie.name}. Preço: ${cookie.price}. Tamanho: ${cookie.size}. Descrição: ${cookie.description}.`;
+    const createMessage = (item: Item) => {
+        return `✨ Olá! Seja bem vindo\n Gostaria de comprar o ${item.title}. \n Preço: ${item.cost}. \n Tamanho: ${item.portion}.`;
     };
 
     // Função para abrir o WhatsApp
-    const handleWhatsApp = (cookie: Cookie) => {
-        const message = generateMessage(cookie);
+    const openWhatsApp = (item: Item) => {
+        const message = createMessage(item);
         const url = `https://wa.me/5535997787023?text=${encodeURIComponent(message)}`;
         Linking.openURL(url).catch((err) => {
             console.error('Erro ao abrir WhatsApp:', err);
@@ -59,21 +63,32 @@ export function Cookie({ navigation }: MenuTabTypes) {
     };
 
     return (
-        <ImageBackground source={Fundo} style={styleContainer.container}>
+        <ImageBackground source={backgroundImage} style={styleContainer.container}>
             <ScrollView contentContainerStyle={styles.scrollViewContainer}>
                 <View style={styles.container}>
-                    {cookies.map((cookie, index) => (
-                        <View key={index} style={styles.cookieCard}>
-                            <Image source={cookie.image} style={styles.cookieImage} />
-                            <Text style={styles.cookieName}>{cookie.name}</Text>
-                            <Text style={styles.cookiePrice}>{cookie.price}</Text>
-                            <Text style={styles.cookieSize}>{cookie.size}</Text>
-                            <Text style={styles.cookieDescription}>{cookie.description}</Text>
+                    {items.map((item, index) => (
+                        <View
+                            key={index}
+                            style={[
+                                styles.itemCard,
+                                { backgroundColor: item.inStock ? 'white' : '#f8d7da' } // Branco para disponível e vermelho claro para indisponível
+                            ]}
+                        >
+                            <Image source={item.picture} style={styles.itemImage} />
+                            <Text style={styles.itemTitle}>{item.title}</Text>
+                            <Text style={styles.itemCost}>{item.cost}</Text>
+                            <Text style={styles.itemPortion}>{item.portion}</Text>
+                            <Text style={styles.itemDetails}>{item.details}</Text>
                             <TouchableOpacity
-                                style={styles.button}
-                                onPress={() => handleWhatsApp(cookie)}
+                                style={[
+                                    styles.button,
+                                    { backgroundColor: item.inStock ? '#28a745' : '#dc3545' } // Verde para disponível e vermelho para indisponível
+                                ]}
+                                onPress={() => item.inStock && openWhatsApp(item)} // Só permitir abrir WhatsApp se disponível
                             >
-                                <Text style={styles.buttonText}>Comprar pelo WhatsApp</Text>
+                                <Text style={styles.buttonText}>
+                                    {item.inStock ? 'Comprar pelo WhatsApp' : 'Indisponível'}
+                                </Text>
                             </TouchableOpacity>
                         </View>
                     ))}

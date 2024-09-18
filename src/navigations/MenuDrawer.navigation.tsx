@@ -4,14 +4,10 @@ import { MenuTabs } from './MenuBottomtab.navigation';
 import { colors } from '../styles/colors'
 import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from "../hook/auth";
-import { Camera, QrCode, Imagens } from '../screens';
 import { Perfil } from '../screens';
 
 type MenuDrawerParam = {
     Tab: undefined
-    Camera: undefined
-    Qrcode: undefined
-    Imagens: undefined
     Perfil: undefined
 
 }
@@ -47,32 +43,10 @@ export function DrawerNavigation() {
 
             <Drawer.Screen name='Perfil' component={Perfil}
                 options={{
-                    drawerLabel: 'sobre nós',
+                    drawerLabel: 'Sobre Nós',
+                    headerTitle: 'Sobre Nós',
                     drawerIcon: () => (
                         <Ionicons name="information-circle" size={24} color={colors.branco} />
-                    ),
-                }}
-            />
-            <Drawer.Screen name='Camera' component={Camera}
-                options={{
-                    drawerLabel: 'Câmera',
-                    headerTitle: '',
-                    drawerIcon: () => (
-                        <MaterialCommunityIcons name="camera-wireless-outline" size={24} color="white" />
-                    ),
-                }}
-            />
-            <Drawer.Screen name='Imagens' component={Imagens}
-                options={{
-                    drawerIcon: () => (
-                        <FontAwesome name="picture-o" size={24} color={colors.branco} />
-                    ),
-                }}
-            />
-            <Drawer.Screen name='Qrcode' component={QrCode}
-                options={{
-                    drawerIcon: () => (
-                        <MaterialCommunityIcons name="qrcode-scan" sixe={24} color={colors.branco} />
                     ),
                 }}
             />

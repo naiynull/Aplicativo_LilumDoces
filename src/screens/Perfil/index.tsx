@@ -14,12 +14,8 @@ export function Perfil() {
         Linking.openURL('https://www.instagram.com/lilumdoces');
     };
 
-    const handleFacebookPress = () => {
-        Linking.openURL('https://www.facebook.com/lilumdoces');
-    };
-
     const handleWebsitePress = () => {
-        Linking.openURL('https://www.lilumdoces.com');
+        Linking.openURL('https://wa.me/5535997787023');
     };
 
     return (
@@ -39,11 +35,8 @@ export function Perfil() {
                         <TouchableOpacity onPress={handleInstagramPress} style={styles.iconContainer}>
                             <FontAwesome5 name="instagram" size={30} color={colors.principal} />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={handleFacebookPress} style={styles.iconContainer}>
-                            <FontAwesome5 name="facebook" size={30} color={colors.principal} />
-                        </TouchableOpacity>
                         <TouchableOpacity onPress={handleWebsitePress} style={styles.iconContainer}>
-                            <FontAwesome5 name="globe" size={30} color={colors.principal} />
+                            <FontAwesome5 name="whatsapp" size={30} color={colors.principal} />
                         </TouchableOpacity>
                     </View>
                 </View>

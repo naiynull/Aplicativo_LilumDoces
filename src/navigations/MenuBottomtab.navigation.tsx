@@ -3,17 +3,13 @@ import { Home, Informacoes } from '../screens';
 import { Entypo, Feather } from '@expo/vector-icons';
 import { FontAwesome5, SimpleLineIcons, AntDesign, Ionicons } from '@expo/vector-icons';
 import { colors } from "../styles/colors"
-import { MessageNavigation } from './menssage.navigaton'
 import { InformacaoNavigation } from './informacoes.navigation'
-import { Camera } from '../screens/Camera';
 import { Perfil } from '../screens';
 
 
 type MenuTabParam = {
     Home: undefined
     Cardápio: undefined
-    Mensagem: undefined
-    Camera: undefined
     Perfil: undefined
 
 }
@@ -47,13 +43,6 @@ export function MenuTabs() {
 
                 }}
 
-            />
-            <Tab.Screen name="Mensagem" component={MessageNavigation}
-                options={{
-                    tabBarIcon: () => (
-                        <FontAwesome5 name="envelope" size={24} color="black" />
-                    ),
-                }}
             />
 
         </Tab.Navigator>

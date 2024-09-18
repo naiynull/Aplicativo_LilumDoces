@@ -5,54 +5,51 @@ import { styles } from './styled';
 import { MenuTabTypes } from '../../../navigations/MenuBottomtab.navigation';
 import { useAuth } from '../../../hook/auth';
 
-// Defina a interface para o Item com um status adicional
 interface Item {
     title: string;
     cost: string;
     portion: string;
     details: string;
-    picture: ImageSourcePropType; // Use 'ImageSourcePropType' para tipos de imagem
-    inStock: boolean; // Adicione a propriedade 'inStock'
+    picture: ImageSourcePropType;
+    inStock: boolean;
 }
 
-// Dados dos itens com o status definido
 const items: Item[] = [
     {
-        title: 'Palha Italiana Tradicional',
-        cost: 'R$ 3,00',
+        title: 'Bolo de Pote de Brigadeiro',
+        cost: 'R$ 8,00',
         portion: 'Médio',
-        details: 'Uma deliciosa palha italiana feita com chocolate e biscoitos.',
-        picture: require('../../../asset/cookiedechocolate.jpg'),
+        details: 'Uma explosão de sabor com chocolate cremoso e crocante.',
+        picture: require('../../../asset/boloc.png'),
         inStock: true,
     },
     {
-        title: 'Palha Italiana de paçoca',
-        cost: 'R$ 3,00',
+        title: 'Bolo de Pote de Paçoca',
+        cost: 'R$ 8,00',
         portion: 'Médio',
-        details: 'Palha italiana com sabor de paçoca, irresistível e crocante.',
-        picture: require('../../../asset/cookiepacoca.jpg'),
+        details: 'Combinação irresistível de doce de amendoim e crocância.',
+        picture: require('../../../asset/bolop.png'),
         inStock: true,
     },
     {
-        title: 'Palha Italiana de Oreo',
+        title: 'Bolo de Pote de Ninho',
         cost: 'R$ 4,00',
         portion: 'Médio',
-        details: 'Cookie sem lactose e sem derivados de leite.',
-        picture: require('../../../asset/cookiezerolactose.jpg'),
+        details: 'Uma opção especial, leve e saborosa.',
+        picture: require('../../../asset/bolon.png'),
         inStock: true,
     },
 ];
 
-export function Cookie({ navigation }: MenuTabTypes) {
+
+export function BolodePote({ navigation }: MenuTabTypes) {
     const backgroundImage = require('../../../asset/fundo2.png');
     const { user, signOut } = useAuth();
 
-    // Função para gerar a mensagem
     const createMessage = (item: Item) => {
         return `✨ Olá! Seja bem vindo\n Gostaria de comprar o ${item.title}. \n Preço: ${item.cost}. \n Tamanho: ${item.portion}.`;
     };
 
-    // Função para abrir o WhatsApp
     const openWhatsApp = (item: Item) => {
         const message = createMessage(item);
         const url = `https://wa.me/5535997787023?text=${encodeURIComponent(message)}`;
@@ -71,7 +68,7 @@ export function Cookie({ navigation }: MenuTabTypes) {
                             key={index}
                             style={[
                                 styles.itemCard,
-                                { backgroundColor: item.inStock ? 'white' : '#f8d7da' } // Branco para disponível e vermelho claro para indisponível
+                                { backgroundColor: item.inStock ? 'white' : '#f8d7da' }
                             ]}
                         >
                             <Image source={item.picture} style={styles.itemImage} />
@@ -82,9 +79,9 @@ export function Cookie({ navigation }: MenuTabTypes) {
                             <TouchableOpacity
                                 style={[
                                     styles.button,
-                                    { backgroundColor: item.inStock ? '#28a745' : '#dc3545' } // Verde para disponível e vermelho para indisponível
+                                    { backgroundColor: item.inStock ? '#28a745' : '#dc3545' }
                                 ]}
-                                onPress={() => item.inStock && openWhatsApp(item)} // Só permitir abrir WhatsApp se disponível
+                                onPress={() => item.inStock && openWhatsApp(item)}
                             >
                                 <Text style={styles.buttonText}>
                                     {item.inStock ? 'Comprar pelo WhatsApp' : 'Indisponível'}

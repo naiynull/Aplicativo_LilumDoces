@@ -55,13 +55,6 @@ export function MenuTabs() {
                     ),
                 }}
             />
-            <Tab.Screen name="Perfil" component={Perfil}
-                options={{
-                    tabBarIcon: () => (
-                        <Ionicons name="person" size={24} color={colors.principal} />
-                    ),
-                }}
-            />
 
         </Tab.Navigator>
 

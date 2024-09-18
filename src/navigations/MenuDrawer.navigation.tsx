@@ -1,16 +1,18 @@
 import { DrawerNavigationProp, createDrawerNavigator } from '@react-navigation/drawer';
-import { MaterialCommunityIcons,FontAwesome } from '@expo/vector-icons';
+import { MaterialCommunityIcons,FontAwesome} from '@expo/vector-icons';
 import { MenuTabs } from './MenuBottomtab.navigation';
 import { colors } from '../styles/colors'
 import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from "../hook/auth";
 import { Camera, QrCode, Imagens } from '../screens';
+import { Perfil } from '../screens';
 
 type MenuDrawerParam = {
     Tab: undefined
     Camera: undefined
     Qrcode: undefined
     Imagens: undefined
+    Perfil: undefined
 
 }
 type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Tab">
@@ -42,6 +44,15 @@ export function DrawerNavigation() {
                 }}
 
             />
+
+            <Drawer.Screen name='Perfil' component={Perfil}
+                options={{
+                    drawerLabel: 'sobre nós',
+                    drawerIcon: () => (
+                        <Ionicons name="information-circle" size={24} color={colors.branco} />
+                    ),
+                }}
+            />
             <Drawer.Screen name='Camera' component={Camera}
                 options={{
                     drawerLabel: 'Câmera',
@@ -65,6 +76,7 @@ export function DrawerNavigation() {
                     ),
                 }}
             />
+             
 
         </Drawer.Navigator>
     )

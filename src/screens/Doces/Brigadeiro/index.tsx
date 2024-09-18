@@ -18,27 +18,27 @@ interface Item {
 // Dados dos itens com o status definido
 const items: Item[] = [
     {
-        title: 'Cookie de Chocolate',
-        cost: 'R$ 3,00',
+        title: 'Brigadeiro Tradicional',
+        cost: 'R$ 1,00',
         portion: 'Médio',
         details: 'Um clássico cookie de chocolate com pedaços de chocolate derretido.',
-        picture: require('../../../asset/cookiedechocolate.jpg'),
+        picture: require('../../../asset/brigadeiro.jpg'),
         inStock: true,
     },
     {
-        title: 'Cookie paçoca',
-        cost: 'R$ 3,00',
+        title: 'Brigadeiro paçoca',
+        cost: 'R$ 1,00',
         portion: 'Médio',
         details: 'Cookie de paçoca irresistível.',
-        picture: require('../../../asset/cookiepacoca.jpg'),
-        inStock: false,
+        picture: require('../../../asset/brigadeiropaçoca.jpg'),
+        inStock: true,
     },
     {
-        title: 'Cookie sem glúten e lactose',
-        cost: 'R$ 4,00',
+        title: 'beijinho',
+        cost: 'R$ 1,00',
         portion: 'Médio',
         details: 'Cookie sem lactose e sem derivados de leite.',
-        picture: require('../../../asset/cookiezerolactose.jpg'),
+        picture: require('../../../asset/beijinho.jpg'),
         inStock: true,
     },
 ];

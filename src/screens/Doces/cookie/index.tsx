@@ -23,7 +23,7 @@ const items: Item[] = [
         portion: 'Médio',
         details: 'Um clássico cookie de chocolate com pedaços de chocolate derretido.',
         picture: require('../../../asset/cookiedechocolate.jpg'),
-        inStock: true,
+        inStock: false,
     },
     {
         title: 'Cookie paçoca',
@@ -34,12 +34,12 @@ const items: Item[] = [
         inStock: false,
     },
     {
-        title: 'Cookie sem glúten e lactose',
+        title: 'Cookie sem lactose',
         cost: 'R$ 4,00',
         portion: 'Médio',
         details: 'Cookie sem lactose e sem derivados de leite.',
         picture: require('../../../asset/cookiezerolactose.jpg'),
-        inStock: true,
+        inStock: false,
     },
 ];
 

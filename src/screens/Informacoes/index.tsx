@@ -34,26 +34,28 @@ export function Informacoes({ navigation }: InformacoesTypes) {
                             <Text style={styles.itemTitle}>Brownie</Text>
                            
                         </TouchableOpacity>
-                        
-                        <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("Cupcake")}>
-                            <Image source={require('../../asset/ck.jpeg')} style={styles.image} />
-                            <Text style={styles.itemTitle}>Cupcake</Text>
-                           
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={styles.row}>
-                        <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("Donuts")}>
-                            <Image source={require('../../asset/donuts.jpg')} style={styles.image} />
-                            <Text style={styles.itemTitle}>Donuts</Text>
-                          
-                        </TouchableOpacity>
-                        
                         <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("ConeRecheado")}>
                             <Image source={require('../../asset/Cone.jpg')} style={styles.image} />
                             <Text style={styles.itemTitle}>Cone Recheado</Text>
                            
                         </TouchableOpacity>
+                        
+                    </View>
+
+                    <View style={styles.row}>
+                       {/* <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("Donuts")}>
+                            <Image source={require('../../asset/donuts.jpg')} style={styles.image} />
+                            <Text style={styles.itemTitle}>Donuts</Text>
+                          
+                        </TouchableOpacity>*/}
+
+                         {/*<TouchableOpacity style={styles.item} onPress={() => navigation.navigate("Cupcake")}>
+                            <Image source={require('../../asset/ck.jpeg')} style={styles.image} />
+                            <Text style={styles.itemTitle}>Cupcake</Text>
+                           
+                        </TouchableOpacity> */}
+                        
+                       
                     </View>
 
                     <View style={styles.row}>
@@ -63,9 +65,9 @@ export function Informacoes({ navigation }: InformacoesTypes) {
                             
                         </TouchableOpacity>
                         
-                        <View style={styles.item}>
+                         <View style={styles.item}>
                             <Image source={require('../../asset/ck.jpeg')} style={styles.image} />
-                            <Text style={styles.itemTitle}>Cupcake</Text>
+                    <Text style={styles.itemTitle}>Bolo de Pote</Text>
                             
                         </View>
                     </View>

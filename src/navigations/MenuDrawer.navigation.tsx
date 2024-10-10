@@ -5,10 +5,12 @@ import { colors } from '../styles/colors'
 import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from "../hook/auth";
 import { Perfil } from '../screens';
+import {ScreenLocation} from '../screens';
 
 type MenuDrawerParam = {
     Tab: undefined
     Perfil: undefined
+    ScreenLocation: undefined
 
 }
 type MenuScreenNavigation = DrawerNavigationProp<MenuDrawerParam, "Tab">
@@ -50,7 +52,15 @@ export function DrawerNavigation() {
                     ),
                 }}
             />
-             
+             <Drawer.Screen name='ScreenLocation' component={ScreenLocation}
+                options={{
+                    drawerLabel: 'Localização',
+                    headerTitle: 'Localização',
+                    drawerIcon: () => (
+                        <Ionicons name="information-circle" size={24} color={colors.branco} />
+                    ),
+                }}
+            />
 
         </Drawer.Navigator>
     )

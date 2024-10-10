@@ -3,7 +3,7 @@ export { Register as ScreenRegister } from "./Register"
 export { Home as Home } from "./Home"
 export { Informacoes as Informacoes } from "./Informacoes"
 export {Perfil as Perfil} from "./Perfil"
-
+export {LocationMap as ScreenLocation} from './LocationMap'
 //pagina dos doces 
 export { Cookie as Cookie } from "../screens/Doces/cookie"
 export { Biscoito as Biscoito } from "../screens/Doces/Biscoito"

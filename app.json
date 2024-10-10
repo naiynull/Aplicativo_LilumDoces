@@ -46,6 +46,12 @@
         {
           "photosPermission": "O aplicativo acessa suas fotos para que você possa compartilhá-las com seus amigos"
         }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlways AndWhen InUsePermission": "Permita $(PRODUCT_NAME) acessar sua localização."
+        }
       ]
     ]
   }
